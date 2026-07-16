@@ -1,0 +1,131 @@
+{
+  "eqn_config": {
+    "eqn_name": "multiclassQueue",
+    "dim": 2,
+    "K": 2,
+    "phi_mask": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "_comment_M_cap": "Axis C: near-critical ratios (same regime as the 6D near-critical winner) but no longer uniform/mirror-symmetric across pools -- pool 0 favors class 0 slightly, pool 1 favors class 0 slightly too (not a mirrored preference), unlike the fully symmetric 1.0/1.0 base.",
+    "M_cap": [
+      [
+        1.0,
+        1.02
+      ],
+      [
+        1.03,
+        1.0
+      ]
+    ],
+    "_comment_phi_star": "Broken mirror symmetry: base config has [0.4,0.6]/[0.6,0.4] which are exact swaps of each other; here the two rows are independently asymmetric.",
+    "phi_star": [
+      [
+        0.35,
+        0.65
+      ],
+      [
+        0.55,
+        0.45
+      ]
+    ],
+    "_comment_beta": "Asymmetric net demand, no longer a clean 2:1 ratio.",
+    "beta": [
+      -0.12,
+      -0.04
+    ],
+    "Sigma": [
+      [
+        3.2,
+        0.96
+      ],
+      [
+        0.96,
+        3.2
+      ]
+    ],
+    "_comment_w": "Wider spread between the two holding costs (was 5.0/4.0).",
+    "w": [
+      6.0,
+      3.0
+    ],
+    "c": [
+      1.0,
+      1.0
+    ],
+    "u_lower": [
+      -2.0,
+      -2.0
+    ],
+    "u_upper": [
+      2.0,
+      2.0
+    ],
+    "discount": 0.01,
+    "x0": 0.1,
+    "total_time_critic": 3.0,
+    "num_time_interval_critic": 60,
+    "a": 1,
+    "simulation": "fixed",
+    "consist_weight": 1.0,
+    "consist_bnd_weight": 1.0,
+    "consist_bnd_samples": 64
+  },
+  "net_config": {
+    "num_hiddens_critic": [
+      128,
+      128,
+      128
+    ],
+    "activation": "elu",
+    "transformation": "x2",
+    "logging_frequency": 100,
+    "lr_boundaries_critic": [
+      2000,
+      4000
+    ],
+    "lr_values_critic": [
+      0.0005,
+      0.0002,
+      8e-05
+    ],
+    "lr_boundaries_actor": [
+      3000,
+      5000
+    ],
+    "lr_values_actor": [
+      0.003,
+      0.001,
+      0.0003
+    ],
+    "batch_size": 1024,
+    "num_iterations": 8000,
+    "phi_enc_hidden": 16
+  },
+  "train_config": {
+    "TD_type": "variance",
+    "control": true,
+    "log_level": "INFO",
+    "seed": 42,
+    "actor_update_freq": 10,
+    "actor_warmup_steps": 2500,
+    "pretrain_steps": 1000,
+    "pretrain_grad_steps": 1000,
+    "pretrain_grad_lr": 0.001,
+    "phi_sample_alpha": 5.0,
+    "probe_eps": 0.01,
+    "refl_tol": 1e-08,
+    "pace": 0,
+    "epoch": 3,
+    "use_jump": false,
+    "beta_perturb_frac": 0.1,
+    "diag_jump_kappa": true,
+    "phi_logit_clip_range": null
+  }
+}

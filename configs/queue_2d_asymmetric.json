@@ -9,24 +9,28 @@
       [1, 1]
     ],
 
+    "_comment_M_cap": "Axis C: near-critical ratios (same regime as the 6D near-critical winner) but no longer uniform/mirror-symmetric across pools -- pool 0 favors class 0 slightly, pool 1 favors class 0 slightly too (not a mirrored preference), unlike the fully symmetric 1.0/1.0 base.",
     "M_cap": [
-      [1.0, 1.0],
-      [1.0, 1.0]
+      [1.00, 1.02],
+      [1.03, 1.00]
     ],
 
+    "_comment_phi_star": "Broken mirror symmetry: base config has [0.4,0.6]/[0.6,0.4] which are exact swaps of each other; here the two rows are independently asymmetric.",
     "phi_star": [
-      [0.4, 0.6],
-      [0.6, 0.4]
+      [0.35, 0.65],
+      [0.55, 0.45]
     ],
 
-    "beta": [-0.1, -0.05],
+    "_comment_beta": "Asymmetric net demand, no longer a clean 2:1 ratio.",
+    "beta": [-0.12, -0.04],
 
     "Sigma": [
       [3.20, 0.96],
       [0.96, 3.20]
     ],
 
-    "w": [5.0, 4.0],
+    "_comment_w": "Wider spread between the two holding costs (was 5.0/4.0).",
+    "w": [6.0, 3.0],
     "c": [1.0, 1.0],
     "u_lower": [-2.0, -2.0],
     "u_upper": [2.0, 2.0],

@@ -10,8 +10,8 @@
     ],
 
     "M_cap": [
-      [1.0, 1.0],
-      [1.0, 1.0]
+      [1.0, 1.5],
+      [1.5, 1.0]
     ],
 
     "phi_star": [
@@ -71,7 +71,7 @@
     "refl_tol": 1e-08,
     "pace": 0,
     "epoch": 3,
-    "use_jump": true,
+    "use_jump": false,
     "beta_perturb_frac": 0.1,
     "diag_jump_kappa": true,
     "phi_logit_clip_range": null

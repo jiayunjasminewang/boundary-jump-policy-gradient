@@ -1,0 +1,95 @@
+{
+  "eqn_config": {
+    "eqn_name": "multiclassQueue",
+    "dim": 6,
+    "K":   6,
+
+    "phi_mask": [
+      [1, 1, 0, 0, 0, 0],
+      [0, 1, 1, 0, 0, 0],
+      [0, 0, 1, 1, 0, 0],
+      [0, 0, 0, 1, 1, 0],
+      [0, 0, 0, 0, 1, 1],
+      [1, 0, 0, 0, 0, 1]
+    ],
+
+    "M_cap": [
+      [1.0, 1.5, 0.0, 0.0, 0.0, 0.0],
+      [0.0, 1.0, 1.5, 0.0, 0.0, 0.0],
+      [0.0, 0.0, 1.0, 1.5, 0.0, 0.0],
+      [0.0, 0.0, 0.0, 1.0, 1.5, 0.0],
+      [0.0, 0.0, 0.0, 0.0, 1.0, 1.5],
+      [1.5, 0.0, 0.0, 0.0, 0.0, 1.0]
+    ],
+
+    "phi_star": [
+      [0.4, 0.6, 0.0, 0.0, 0.0, 0.0],
+      [0.0, 0.4, 0.6, 0.0, 0.0, 0.0],
+      [0.0, 0.0, 0.4, 0.6, 0.0, 0.0],
+      [0.0, 0.0, 0.0, 0.4, 0.6, 0.0],
+      [0.0, 0.0, 0.0, 0.0, 0.4, 0.6],
+      [0.6, 0.0, 0.0, 0.0, 0.0, 0.4]
+    ],
+
+    "beta": [-0.1, -0.05, -0.1, -0.05, -0.1, -0.05],
+
+    "Sigma": [
+      [3.20, 0.48, 0.00, 0.00, 0.00, 0.48],
+      [0.48, 3.20, 0.48, 0.00, 0.00, 0.00],
+      [0.00, 0.48, 3.20, 0.48, 0.00, 0.00],
+      [0.00, 0.00, 0.48, 3.20, 0.48, 0.00],
+      [0.00, 0.00, 0.00, 0.48, 3.20, 0.48],
+      [0.48, 0.00, 0.00, 0.00, 0.48, 3.20]
+    ],
+
+    "w":       [5.0, 4.0, 5.0, 4.0, 5.0, 4.0],
+    "c":       [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+    "u_lower": [-2.0, -2.0, -2.0, -2.0, -2.0, -2.0],
+    "u_upper": [ 2.0,  2.0,  2.0,  2.0,  2.0,  2.0],
+
+    "discount": 0.01,
+    "x0": 0.1,
+    "total_time_critic": 3.0,
+    "num_time_interval_critic": 60,
+    "a": 1,
+    "simulation": "fixed",
+    "consist_weight": 1.0,
+    "consist_bnd_weight": 1.0,
+    "consist_bnd_samples": 64
+  },
+
+  "net_config": {
+    "num_hiddens_critic": [256, 256, 256, 256],
+    "activation":         "elu",
+    "transformation":     "x2",
+    "logging_frequency":  100,
+    "lr_boundaries_critic": [3000, 6000],
+    "lr_values_critic":     [5e-4, 2e-4, 8e-5],
+    "lr_boundaries_actor":  [5000, 9000],
+    "lr_values_actor":      [3e-3, 1e-3, 3e-4],
+    "batch_size":   1024,
+    "num_iterations": 8000,
+    "phi_enc_hidden": 32
+  },
+
+  "train_config": {
+    "TD_type":            "variance",
+    "control":            true,
+    "log_level":          "INFO",
+    "seed":               42,
+    "actor_update_freq":  10,
+    "actor_warmup_steps": 4000,
+    "pretrain_steps":     2000,
+    "pretrain_grad_steps":2000,
+    "pretrain_grad_lr":   0.001,
+    "phi_sample_alpha":   5.0,
+    "probe_eps":          0.01,
+    "refl_tol":           1e-08,
+    "pace":               0,
+    "epoch":              3,
+    "use_jump":           false,
+    "beta_perturb_frac":  0.1,
+    "diag_jump_kappa": true,
+    "phi_logit_clip_range": null
+  }
+}
