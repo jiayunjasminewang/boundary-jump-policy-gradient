@@ -51,8 +51,8 @@
     "lr_values_critic": [5e-4, 2e-4, 8e-5],
     "lr_boundaries_actor": [3000, 5000],
     "lr_values_actor": [3e-3, 1e-3, 3e-4],
-    "batch_size": 512,
-    "num_iterations": 5000,
+    "batch_size": 1024,
+    "num_iterations": 8000,
     "phi_enc_hidden": 16
   },
 
