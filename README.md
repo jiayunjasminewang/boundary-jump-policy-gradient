@@ -133,7 +133,7 @@ so that paired comparisons use the same noise sequence.
 - Exact floating-point results may vary slightly across TensorFlow versions,
 hardware, and oneDNN/CUDA execution paths.
 
-## Code provenance and acknowledgments
+## Acknowledgments
 
 This repository is derived from
 [RBMSolver](https://github.com/nian-si/RBMSolver), permission was granted by the author to release this modified implementation under a license chosen by the present author.
