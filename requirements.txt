@@ -1,0 +1,6 @@
+# Core numerical and machine-learning dependencies
+numpy>=1.26,<2.0
+tensorflow>=2.15,<2.21
+scipy>=1.11,<2.0
+h5py>=3.9,<4.0
+tqdm>=4.66,<5.0
